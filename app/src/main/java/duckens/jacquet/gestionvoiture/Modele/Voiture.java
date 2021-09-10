@@ -11,10 +11,19 @@ import androidx.annotation.NonNull;
 import duckens.jacquet.gestionvoiture.Data.Database;
 
 public class Voiture {
-    String numImmatriculation, marque, modele, couleur, transmission;
-    int annee, id;
+    String numImmatriculation,annee, marque, modele, couleur, transmission;
+    int id;
 
     public Voiture() {
+
+    }
+    public  Voiture(String numImmatriculation,String annee,String marque,String modele,String couleur,String transmission,int Id){
+        this.marque=marque;
+        this.modele=modele;
+        this.annee=annee;
+        this.couleur=couleur;
+        this.numImmatriculation=numImmatriculation;
+        this.transmission=transmission;
 
     }
 
@@ -66,11 +75,11 @@ public class Voiture {
         this.transmission = transmission;
     }
 
-    public int getAnnee() {
+    public String getAnnee() {
         return annee;
     }
 
-    public void setAnnee(int annee) {
+    public void setAnnee(String annee) {
         this.annee = annee;
     }
 
@@ -84,7 +93,7 @@ public class Voiture {
     public static String getScript() {
         String script = " CREATE TABLE Voiture(id INTEGER PRIMARY KEY AUTOINCREMENT,";
         script += "numImmatriculation TEXT,";
-        script += "marque TEXT";
+        script += "marque TEXT,";
         script += "modele TEXT,";
         script += "annee TEXT,";
         script += "transmission TEXT,";
@@ -136,7 +145,7 @@ public class Voiture {
         db.close();
     }
 
-    public static void deleteAll(Context context, long id) {
+    public static void deleteAll(Context context) {
         Database db = new Database(context);
         db.open();
         db.getDB().delete("Voiture", null, null);
@@ -147,7 +156,7 @@ public class Voiture {
         Database db = new Database(context);
         db.open();
         String query = "select ";
-        query += "id, numImmatriculation,marque,modele,annee,transmission,couleur";
+        query += "id,numImmatriculation,marque,modele,annee,transmission,couleur ";
         query += "from Voiture";
         Cursor cursor = db.getDB().rawQuery(query, null);
         List<Voiture> list = new ArrayList<>();
@@ -157,7 +166,7 @@ public class Voiture {
             obj.setNumImmatriculation(cursor.getString(1));
             obj.setMarque(cursor.getString(2));
             obj.setModele(cursor.getString(3));
-            obj.setAnnee(cursor.getInt(4));
+            obj.setAnnee(cursor.getString(4));
             obj.setTransmission(cursor.getString(5));
             obj.setCouleur(cursor.getString(6));
             list.add(obj);
