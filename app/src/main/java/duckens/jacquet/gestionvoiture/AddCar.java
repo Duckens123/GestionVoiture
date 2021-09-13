@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class AddCar extends AppCompatActivity {
     EditText marque,modele,annee,couleur,numimma;
@@ -20,11 +21,11 @@ public class AddCar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_car);
-        marque=(EditText)findViewById(R.id.marquev);
-        modele=(EditText)findViewById(R.id.modelev);
-        annee=(EditText)findViewById(R.id.anneev);
-        couleur=(EditText)findViewById(R.id.couleurv);
-        numimma=(EditText)findViewById(R.id.numimmav);
+        marque=findViewById(R.id.marquev);
+        modele=findViewById(R.id.modelev);
+        annee=findViewById(R.id.anneev);
+        couleur=findViewById(R.id.couleurv);
+        numimma=findViewById(R.id.numimmav);
         transmission=findViewById(R.id.transmissionv);
         btnsave=findViewById(R.id.btnsave);
         LoadVlues();
@@ -32,7 +33,6 @@ public class AddCar extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Voiture obj=new Voiture();
-                LoadVlues();
                 if(Session.getCurrentVoiture()!=null){
                     obj=Session.getCurrentVoiture();
                 }
@@ -50,9 +50,14 @@ public class AddCar extends AppCompatActivity {
 
                 if(obj.getId()>0){
                     Voiture.update(AddCar.this,obj);
+                    Toast.makeText(AddCar.this,"Mise ajout effectue avec succes",Toast.LENGTH_LONG).show();
+
+
                 }
                 else {
                     Voiture.Insert(AddCar.this,obj);
+                    Toast.makeText(AddCar.this,"patient ajoute avec succes",Toast.LENGTH_LONG).show();
+
                 }
                 Session.setCurrentVoiture(null);
                 startActivity(new Intent(AddCar.this,ListCars.class));

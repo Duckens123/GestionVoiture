@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="transparent">#C1FFFFFF</color>
-    <color name="mycolor">#06DDF8</color>
+    <color name="mycolor">#0066FF</color>
+    <color name="couleurp">#0066FF</color>
     <color name="red">#F8061A</color>
 </resources>

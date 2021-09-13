@@ -110,6 +110,10 @@ public class ListCars extends AppCompatActivity {
                 startActivity(new Intent(ListCars.this, ListCars.class));
                 finish();
                 return true;
+            case R.id.logout:
+                startActivity(new Intent(ListCars.this, MainActivity.class));
+                finish();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
