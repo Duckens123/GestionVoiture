@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "280787050089",
+    "project_id": "gestionvoiture-b9583",
+    "storage_bucket": "gestionvoiture-b9583.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280787050089:android:0ee2d313e1f2db9fb1ccf8",
+        "android_client_info": {
+          "package_name": "duckens.jacquet.gestionvoiture"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "280787050089-tvmbncfd4lvqrduv3t7nlhptt3h1r8d8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCV7q4m6xmY0K-aDgECW_nFiN07KkuxJTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "280787050089-tvmbncfd4lvqrduv3t7nlhptt3h1r8d8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -17,12 +17,16 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListCars extends AppCompatActivity {
     ListView lvvoiture;
     AdapterCars adapterCars;
+    private FirebaseAuth mAuth;
     ArrayAdapter<Voiture> arrayAdapter;
 
     @Override
@@ -30,6 +34,7 @@ public class ListCars extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_cars);
         lvvoiture=findViewById(R.id.lvvoiture);
+        mAuth = FirebaseAuth.getInstance();
         List<Voiture> list=new ArrayList<>();
         list=Voiture.selectAll(ListCars.this);
         adapterCars = new AdapterCars(ListCars.this, android.R.layout.simple_list_item_1, list);
@@ -73,6 +78,16 @@ public class ListCars extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser == null){
+            startActivity(new Intent(ListCars.this,MainActivity.class));
+        }
     }
 
     @Override

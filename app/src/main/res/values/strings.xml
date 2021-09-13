@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">King Motors</string>
     <array name="transmission">
         <item>Choisir...</item>
         <item>Automatique</item>
         <item>Manuelle</item>
     </array>
+    <string name="app_name">King Motors</string>
 </resources>

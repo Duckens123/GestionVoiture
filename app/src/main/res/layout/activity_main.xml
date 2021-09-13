@@ -3,11 +3,109 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-   <Button
+    android:layout_height="match_parent"
+    android:background="@drawable/log"
+    android:orientation="vertical">
+   <LinearLayout
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:text="Connecter"
-       android:id="@+id/btnconnect"/>
+      android:orientation="vertical"
+       android:background="@color/transparent"
+       android:layout_marginTop="20dp"
+       android:layout_marginLeft="10dp"
+       android:padding="5dp"
+       android:layout_marginRight="10dp">
+      <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:orientation="vertical">
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Connecter"
+             android:textColor="@color/black"
+             android:textSize="30dp"
+             android:layout_gravity="center"
+             android:textStyle="bold"/>
+         <ImageView
+             android:id="@+id/imglogo"
+             android:layout_width="120dp"
+             android:layout_height="100dp"
+             android:src="@drawable/ic_login"
+             />
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+         android:orientation="horizontal"
+          android:layout_marginBottom="10dp">
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Email"
+             android:textColor="@color/black"
+             android:textStyle="bold"/>
+         <EditText
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+            android:id="@+id/txtemail"
+             android:inputType="textEmailAddress"
+             android:textColor="@color/black"
+             android:drawableLeft="@drawable/ic_baseline_account_box_24"
+             android:textStyle="bold"/>
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal">
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Mot de passe"
+             android:textColor="@color/black"
+             android:textStyle="bold"/>
+         <EditText
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/txtpwd"
+             android:textColor="@color/black"
+             android:textStyle="bold"
+             android:inputType="textPassword"
+             android:drawableLeft="@drawable/lock"/>
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+         android:layout_margin="5dp"
+          android:orientation="vertical"
+          android:layout_centerInParent="true">
+
+         <Button
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Connecter"
+             android:textStyle="bold"
+             android:id="@+id/btnconnect"/>
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerInParent="true"
+          android:layout_gravity="center"
+          >
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Ou Créer un compte ici"
+             android:textStyle="italic"
+             android:id="@+id/tinscrire"
+             android:textColor="@color/red"
+             />
+
+      </LinearLayout>
+
+   </LinearLayout>
+
+
 </LinearLayout>

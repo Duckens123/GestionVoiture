@@ -5,16 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/car"
-    tools:context=".SplashScreen">
+    tools:context=".SplashScreen"
+    android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@color/transparent">
+        android:layout_weight="1"
+        android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="King Motors"/>
+            android:text="KING MOTORS"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="50dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Powered By KING COMPUTING"
+            android:gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
     </LinearLayout>
+
 
 </LinearLayout>

@@ -56,6 +56,7 @@ public class AddCar extends AppCompatActivity {
                 }
                 Session.setCurrentVoiture(null);
                 startActivity(new Intent(AddCar.this,ListCars.class));
+                finish();
             }
         });
 
@@ -69,6 +70,7 @@ public class AddCar extends AppCompatActivity {
             annee.setText(obj.getAnnee());
             couleur.setText(obj.getCouleur());
             numimma.setText(obj.getNumImmatriculation());
+            transmission.setSelection(1);
         }
     }
 }
